@@ -1,0 +1,35 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Cloned reference repos
+DDPM_REMD/
+GIS_FloodSimulation/
+
+# Large binary formats (anywhere in repo)
+*.npy
+*.pkl
+*.nc
+*.gdb
+
+# OS
+.DS_Store
+
+# ── Data directory: ignore large subdirs, keep validation + viz ──
+# First, don't ignore data/ itself (so git can look inside)
+# Then explicitly ignore the large subdirectories
+data/adcirc/
+data/cera/
+data/naccs/
+data/deepsurge/
+data/supporting/
+
+# Ignore any sample_output PNGs (old versions)
+data/sample_output_*.png

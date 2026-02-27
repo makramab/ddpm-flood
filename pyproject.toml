@@ -1,0 +1,28 @@
+[project]
+name = "ddpm-flood"
+version = "0.1.0"
+description = "DDPM for Urban Flood Tipping-Point Discovery"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    # Core DDPM dependencies
+    "torch",
+    "torchvision",
+    "einops",
+    "tqdm",
+    "pillow",
+    "numpy",
+    # Data preprocessing
+    "geopandas",
+    "fiona",
+    "netCDF4",
+    "xarray",
+    "shapely",
+    "pyproj",
+    "scikit-learn",
+    # Visualization
+    "matplotlib",
+    "seaborn",
+    "contextily>=1.7.0",
+    "matplotlib-scalebar>=0.9.0",
+]
