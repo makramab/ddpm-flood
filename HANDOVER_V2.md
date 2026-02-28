@@ -205,6 +205,25 @@ This produces maps visually near-identical to Miura's published Figures 8, 9, an
 - 8 storms on STOFSatl mesh
 - 1 storm on NAC2014 mesh
 
+**Additional CERA data available on TACC (not downloaded)**: We only downloaded `maxele.63.nc` (peak surge) from each storm. The full CERA dataset on TACC (~3.1 TB total) also contains other ADCIRC output files for each storm, including:
+
+| File | What it contains | Typical size |
+|---|---|---|
+| `maxele.63.nc` | Max water elevation at each node (one value per node) — **this is what we downloaded** | 100-200 MB |
+| `fort.63.nc` | **Full time series** of water elevation at all nodes (every output timestep throughout the storm — the rising and falling surge curve) | GBs per storm |
+| `fort.64.nc` | Time series of depth-averaged water velocity | GBs per storm |
+| `maxvel.63.nc` | Maximum velocity at each node | 100-200 MB |
+| `maxwvel.63.nc` | Maximum wind velocity | 100-200 MB |
+| `minpr.63.nc` | Minimum barometric pressure | Smaller |
+| `swan_HS_max.63.nc` | Maximum significant wave height (ADCIRC+SWAN coupled) | 100-200 MB |
+
+The time series data (`fort.63.nc`) is what Miura uses in GISSR to compute the storm surge + tide time history — the rising and falling curves shown in her Figure 10. For our current approach we only need peak values (`maxele.63.nc`), but the time series could be useful for:
+- A more sophisticated conditioning variable (e.g., storm duration, rise rate, not just peak)
+- Validating against Miura's time history plots (Figure 10)
+- Future work on temporal flood dynamics
+
+The same `download_cera.sh` script can be adapted to download these files — just change `maxele.63.nc` to `fort.63.nc` in the SCP path. TACC access credentials: username `makramab` at `data.tacc.utexas.edu`, base path is in the script. Access requires TACC MFA (password + token).
+
 #### Miura's DEM — `GIS_FloodSimulation/Data/LM_div18/`
 
 | Property | Value |
