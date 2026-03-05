@@ -1,6 +1,9 @@
 import { Link } from '@tanstack/react-router'
-import { useState } from 'react'
-import { Home, Map, BarChart3, Menu, X, Waves } from 'lucide-react'
+import { Home, Map, BarChart3, Waves, PanelLeftClose, PanelLeft, Sun, Moon } from 'lucide-react'
+import { cn } from '#/lib/utils'
+import { useSidebar } from '#/hooks/useSidebar'
+import { useTheme } from '#/hooks/useTheme'
+import { SIDEBAR_WIDTH_EXPANDED, SIDEBAR_WIDTH_COLLAPSED } from '#/lib/constants'
 
 const NAV_LINKS = [
   { to: '/' as const, label: 'Home', icon: Home },
@@ -9,79 +12,87 @@ const NAV_LINKS = [
 ]
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+  const { expanded, setExpanded } = useSidebar()
+  const { dark, toggle } = useTheme()
+
+  const linkBase = (exp: boolean) => cn(
+    'flex items-center gap-3 rounded-md transition-colors text-sm',
+    exp ? 'px-3 py-2' : 'justify-center px-0 py-2',
+  )
 
   return (
     <>
-      <header className="p-3 md:p-4 flex items-center bg-gray-800 text-white shadow-lg">
-        <button
-          onClick={() => setIsOpen(true)}
-          className="p-2 hover:bg-gray-700 rounded-lg transition-colors"
-          aria-label="Open menu"
-        >
-          <Menu size={24} />
-        </button>
-        <Link to="/" className="ml-3 flex items-center gap-2">
-          <Waves size={28} className="text-cyan-400" />
-          <span className="text-xl font-semibold">DDPM Flood</span>
+      {/* Top header bar */}
+      <header
+        className="fixed top-0 right-0 z-30 h-14 flex items-center justify-between px-4 border-b border-border bg-background transition-all"
+        style={{ left: expanded ? SIDEBAR_WIDTH_EXPANDED : SIDEBAR_WIDTH_COLLAPSED }}
+      >
+        <Link to="/" className="text-sm font-semibold text-foreground hover:text-foreground/80 transition-colors">
+          DDPM Flood Prediction
         </Link>
-        <nav className="hidden md:flex ml-auto gap-1">
-          {NAV_LINKS.map(({ to, label, icon: Icon }) => (
-            <Link
-              key={to}
-              to={to}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
-              activeProps={{ className: 'flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm text-white bg-gray-700 transition-colors' }}
-            >
-              <Icon size={16} />
-              {label}
-            </Link>
-          ))}
-        </nav>
+        <button
+          onClick={toggle}
+          className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+          aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+        >
+          {dark ? <Sun size={18} /> : <Moon size={18} />}
+        </button>
       </header>
 
+      {/* Sidebar — always visible */}
       <aside
-        className={`fixed top-0 left-0 h-full w-72 bg-gray-900 text-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        className="fixed top-0 left-0 h-full z-40 flex flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground transition-all duration-200"
+        style={{ width: expanded ? SIDEBAR_WIDTH_EXPANDED : SIDEBAR_WIDTH_COLLAPSED }}
       >
-        <div className="flex items-center justify-between p-4 border-b border-gray-700">
-          <div className="flex items-center gap-2">
-            <Waves size={24} className="text-cyan-400" />
-            <span className="text-lg font-bold">DDPM Flood</span>
-          </div>
-          <button
-            onClick={() => setIsOpen(false)}
-            className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
-            aria-label="Close menu"
-          >
-            <X size={24} />
-          </button>
+        {/* Logo + collapse toggle */}
+        <div className="group h-14 flex items-center justify-between px-3 border-b border-sidebar-border shrink-0">
+          {expanded ? (
+            <>
+              <Link to="/" className="flex items-center gap-2 overflow-hidden">
+                <Waves size={22} className="shrink-0 text-foreground" />
+                <span className="text-sm font-bold whitespace-nowrap">DDPM Flood</span>
+              </Link>
+              <button
+                onClick={() => setExpanded(false)}
+                className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-sidebar-accent transition-colors"
+                aria-label="Collapse sidebar"
+              >
+                <PanelLeftClose size={18} />
+              </button>
+            </>
+          ) : (
+            <div className="w-full flex items-center justify-center">
+              <Link to="/" className="group-hover:hidden">
+                <Waves size={22} className="text-foreground" />
+              </Link>
+              <button
+                onClick={() => setExpanded(true)}
+                className="hidden group-hover:block p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-sidebar-accent transition-colors"
+                aria-label="Expand sidebar"
+              >
+                <PanelLeft size={18} />
+              </button>
+            </div>
+          )}
         </div>
-        <nav className="flex-1 p-4 overflow-y-auto">
+
+        {/* Nav links */}
+        <nav className="flex-1 p-2 space-y-1 overflow-y-auto">
           {NAV_LINKS.map(({ to, label, icon: Icon }) => (
             <Link
               key={to}
               to={to}
-              onClick={() => setIsOpen(false)}
-              className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-1"
+              className={cn(linkBase(expanded), 'text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent')}
               activeProps={{
-                className: 'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-1',
+                className: cn(linkBase(expanded), 'bg-sidebar-accent text-sidebar-accent-foreground font-medium'),
               }}
             >
-              <Icon size={20} />
-              <span className="font-medium">{label}</span>
+              <Icon size={18} className="shrink-0" />
+              {expanded && <span>{label}</span>}
             </Link>
           ))}
         </nav>
       </aside>
-
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-40"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
     </>
   )
 }

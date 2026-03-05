@@ -26,7 +26,7 @@ function MapPage() {
   const viz = useVisualization(initialScenario, initialLayer)
 
   return (
-    <div className="relative" style={{ height: 'calc(100vh - 56px)' }}>
+    <div className="relative" style={{ height: 'calc(100vh - 3.5rem)' }}>
       {viz.error && <ErrorBanner message={viz.error.message} />}
       {viz.isLoading && !viz.error && <LoadingOverlay />}
 

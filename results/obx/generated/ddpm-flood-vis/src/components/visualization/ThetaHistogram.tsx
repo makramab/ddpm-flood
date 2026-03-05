@@ -14,7 +14,7 @@ interface ThetaHistogramProps {
 const BIN_COUNT = 20
 
 const SCENARIO_COLORS: Record<string, string> = {
-  dorian_low: '#22d3ee',
+  dorian_low: '#22c55e',
   dorian_high: '#ef4444',
   arthur: '#f59e0b',
 }

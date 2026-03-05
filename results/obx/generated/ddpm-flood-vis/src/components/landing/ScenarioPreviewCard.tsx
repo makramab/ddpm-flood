@@ -12,7 +12,7 @@ export function ScenarioPreviewCard({ scenario }: ScenarioPreviewCardProps) {
 
   return (
     <Link to="/map" search={{ scenario: scenario.id }}>
-      <Card className="hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 h-full">
+      <Card className="hover:border-primary/50 transition-all duration-300 hover:shadow-lg h-full">
         <CardContent className="p-4 md:p-6 space-y-3">
           <div className="flex items-start justify-between gap-2">
             <h3 className="text-lg font-semibold">{scenario.name}</h3>

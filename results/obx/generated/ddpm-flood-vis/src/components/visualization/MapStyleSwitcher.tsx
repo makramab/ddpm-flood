@@ -26,7 +26,7 @@ export function MapStyleSwitcher({ activeStyle, onStyleChange }: MapStyleSwitche
             className={cn(
               'p-1.5 rounded-md transition-colors',
               key === activeStyle
-                ? 'bg-cyan-500/20 text-cyan-400'
+                ? 'bg-primary/15 text-foreground'
                 : 'text-muted-foreground hover:text-foreground hover:bg-muted',
             )}
           >

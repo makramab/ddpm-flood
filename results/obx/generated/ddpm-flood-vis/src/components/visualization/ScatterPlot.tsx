@@ -45,16 +45,16 @@ export function ScatterPlot({ nodeData, r2 }: ScatterPlotProps) {
           />
           <Tooltip
             contentStyle={CHART_TOOLTIP_STYLE}
-            labelStyle={{ color: '#94a3b8' }}
+            labelStyle={{ color: 'var(--muted-foreground)' }}
             formatter={(value: number) => `${value.toFixed(3)} m`}
           />
           <ReferenceLine
             segment={[{ x: 0, y: 0 }, { x: max, y: max }]}
             stroke="#6b7280" strokeDasharray="6 4" strokeWidth={1.5}
           />
-          <Scatter data={points} fill="#22d3ee" fillOpacity={0.35} r={2.5} />
+          <Scatter data={points} fill="#71717a" fillOpacity={0.5} r={2.5} />
           {/* R² annotation */}
-          <text x={70} y={30} fill="#e5e7eb" fontSize={14} fontWeight={600}>
+          <text x={70} y={30} fill="var(--foreground)" fontSize={14} fontWeight={600}>
             R² = {r2.toFixed(4)}
           </text>
         </ScatterChart>

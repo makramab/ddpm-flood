@@ -31,10 +31,10 @@ export const Route = createFileRoute('/')({ component: LandingPage })
 
 function LandingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-background">
       <Hero />
       <section className="px-4 md:px-6 pb-16 max-w-5xl mx-auto">
-        <h2 className="text-xl font-semibold text-white mb-6 text-center">Three Scenarios, One Story</h2>
+        <h2 className="text-xl font-semibold text-foreground mb-6 text-center">Three Scenarios, One Story</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {SCENARIOS.map((s) => (
             <ScenarioPreviewCard key={s.id} scenario={s} />

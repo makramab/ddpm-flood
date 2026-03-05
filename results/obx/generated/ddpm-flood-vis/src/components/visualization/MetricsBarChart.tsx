@@ -4,6 +4,7 @@ import {
 } from 'recharts'
 import type { AllMetricsEntry } from '#/lib/data/types'
 import { CHART_AXIS_STYLE, CHART_GRID_STYLE, CHART_TOOLTIP_STYLE } from '#/lib/constants'
+import { cn } from '#/lib/utils'
 
 interface MetricsBarChartProps {
   metrics: AllMetricsEntry[]
@@ -43,11 +44,12 @@ export function MetricsBarChart({ metrics, featuredThetas }: MetricsBarChartProp
           <button
             key={opt.key}
             onClick={() => setActiveMetric(opt.key)}
-            className={`px-3 py-1 rounded-md text-xs font-medium transition-colors ${
+            className={cn(
+              'px-3 py-1 rounded-md text-xs font-medium transition-colors border',
               activeMetric === opt.key
-                ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/50'
-                : 'bg-slate-800 text-gray-400 border border-slate-700 hover:border-slate-600'
-            }`}
+                ? 'bg-primary/15 text-foreground border-primary/50'
+                : 'bg-muted text-muted-foreground border-border hover:border-muted-foreground/30',
+            )}
           >
             {opt.label}
           </button>
@@ -74,7 +76,7 @@ export function MetricsBarChart({ metrics, featuredThetas }: MetricsBarChartProp
                 <Cell
                   key={idx}
                   fill={barColor(entry[activeMetric], activeMetric)}
-                  stroke={entry.isFeatured ? '#22d3ee' : 'transparent'}
+                  stroke={entry.isFeatured ? '#a1a1aa' : 'transparent'}
                   strokeWidth={entry.isFeatured ? 2 : 0}
                 />
               ))}

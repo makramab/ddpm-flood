@@ -3,6 +3,9 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import Header from '#/components/layout/Header'
+import { SidebarProvider } from '#/components/layout/SidebarContext'
+import { useSidebar } from '#/hooks/useSidebar'
+import { SIDEBAR_WIDTH_EXPANDED, SIDEBAR_WIDTH_COLLAPSED } from '#/lib/constants'
 
 import appCss from '#/styles.css?url'
 import mapboxCss from 'mapbox-gl/dist/mapbox-gl.css?url'
@@ -29,8 +32,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <Header />
-        {children}
+        <SidebarProvider>
+          <Header />
+          <PageContent>{children}</PageContent>
+        </SidebarProvider>
         <TanStackDevtools
           config={{ position: 'bottom-right' }}
           plugins={[
@@ -40,5 +45,17 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
+  )
+}
+
+function PageContent({ children }: { children: React.ReactNode }) {
+  const { expanded } = useSidebar()
+  return (
+    <div
+      className="pt-14 transition-all duration-200"
+      style={{ marginLeft: expanded ? SIDEBAR_WIDTH_EXPANDED : SIDEBAR_WIDTH_COLLAPSED }}
+    >
+      {children}
+    </div>
   )
 }

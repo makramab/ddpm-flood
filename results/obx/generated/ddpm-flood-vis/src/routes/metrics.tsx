@@ -18,8 +18,8 @@ export const Route = createFileRoute('/metrics')({
 
 function ChartCard({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-4">
-      <h2 className="text-sm font-semibold text-gray-300 mb-3">{title}</h2>
+    <div className="bg-card border border-border rounded-xl p-4">
+      <h2 className="text-sm font-semibold text-muted-foreground mb-3">{title}</h2>
       {children}
     </div>
   )
@@ -35,9 +35,9 @@ function MetricsPage() {
   const featuredThetas = useMemo(() => scenarios.map((s) => s.theta), [scenarios])
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-background">
       <div className="max-w-6xl mx-auto px-4 md:px-6 py-6 space-y-6">
-        <h1 className="text-xl font-bold text-white">Metrics Dashboard</h1>
+        <h1 className="text-xl font-bold text-foreground">Metrics Dashboard</h1>
 
         {error && <ErrorBanner message={error.message} />}
         {isLoading && !error && <LoadingOverlay />}

@@ -1,5 +1,8 @@
 import type { LayerType } from '#/lib/data/types'
 
+export const SIDEBAR_WIDTH_EXPANDED = '14rem'
+export const SIDEBAR_WIDTH_COLLAPSED = '4rem'
+
 export const MAP_CONFIG = {
   initialViewState: {
     longitude: -75.9,
@@ -29,7 +32,7 @@ export const DEFAULT_SCENARIO = 'dorian_low'
 export const DEFAULT_LAYER: LayerType = 'truth'
 export const DEFAULT_MAP_STYLE: MapStyleKey = 'dark'
 
-// Shared Recharts dark-theme styling
-export const CHART_AXIS_STYLE = { fill: '#9ca3af', fontSize: 12 } as const
-export const CHART_TOOLTIP_STYLE = { backgroundColor: '#1e293b', border: '1px solid #475569', borderRadius: 8 } as const
-export const CHART_GRID_STYLE = { strokeDasharray: '3 3', stroke: '#374151' } as const
+// Shared Recharts styling — neutral grays that work in both light and dark themes
+export const CHART_AXIS_STYLE = { fill: '#71717a', fontSize: 12 } as const
+export const CHART_TOOLTIP_STYLE = { backgroundColor: 'var(--popover)', color: 'var(--popover-foreground)', border: '1px solid var(--border)', borderRadius: 8 } as const
+export const CHART_GRID_STYLE = { strokeDasharray: '3 3', stroke: 'var(--border)' } as const

@@ -20,7 +20,7 @@ export function ScenarioPicker({ scenarios, activeId, onSelect }: ScenarioPicker
             className={cn(
               'w-full text-left px-3 py-2 rounded-md border transition-colors text-sm',
               s.id === activeId
-                ? 'border-cyan-500 bg-cyan-500/10'
+                ? 'border-primary bg-primary/10'
                 : 'border-border hover:border-muted-foreground/30 hover:bg-muted/50',
             )}
           >
