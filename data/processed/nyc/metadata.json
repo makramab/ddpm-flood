@@ -1,0 +1,1435 @@
+{
+  "region": "New York City",
+  "bbox": {
+    "lat_min": 40.45,
+    "lat_max": 40.95,
+    "lon_min": -74.3,
+    "lon_max": -73.7
+  },
+  "ref_bbox": {
+    "lat_min": 40.69,
+    "lat_max": 40.72,
+    "lon_min": -74.02,
+    "lon_max": -74.0
+  },
+  "n_valid_nodes": 4393,
+  "n_patches": 219,
+  "nodes_per_patch": 20,
+  "n_training_scenarios": 191,
+  "n_training_rows": 41829,
+  "train_matrix_shape": [
+    41829,
+    24
+  ],
+  "theta_stats": {
+    "min": 0.6953729391098022,
+    "max": 1.169314980506897,
+    "mean": 0.9529687762260437,
+    "std": 0.11365848034620285
+  },
+  "column_min": [
+    0.6953729391098022,
+    40.456974029541016,
+    -74.28563690185547,
+    -0.45274868607521057,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "column_max": [
+    1.169314980506897,
+    40.941673278808594,
+    -73.70659637451172,
+    27.744142532348633,
+    1.8715808391571045,
+    1.8796311616897583,
+    1.9072364568710327,
+    1.8972840309143066,
+    1.9105240106582642,
+    1.8526649475097656,
+    1.8610318899154663,
+    1.867781162261963,
+    1.8780404329299927,
+    1.8867853879928589,
+    1.9083880186080933,
+    1.9085640907287598,
+    1.8612182140350342,
+    1.8699537515640259,
+    1.8682397603988647,
+    1.8799350261688232,
+    1.923071026802063,
+    1.9438914060592651,
+    1.87259840965271,
+    1.8728156089782715
+  ],
+  "training_scenarios": [
+    {
+      "storm": "Delta",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "control",
+      "theta": 0.9400977860446093
+    },
+    {
+      "storm": "Delta",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "historical",
+      "theta": 0.9400977860446093
+    },
+    {
+      "storm": "Delta",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "Vmax_10",
+      "theta": 0.9400977860446093
+    },
+    {
+      "storm": "Delta",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 0.7760140935348363
+    },
+    {
+      "storm": "Delta",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 0.7760140935348363
+    },
+    {
+      "storm": "Delta",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 0.7760140935348363
+    },
+    {
+      "storm": "Delta",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.8210694086918741
+    },
+    {
+      "storm": "Delta",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 0.8210694086918741
+    },
+    {
+      "storm": "Delta",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 0.8210694086918741
+    },
+    {
+      "storm": "Dorian",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "control",
+      "theta": 1.099372262770995
+    },
+    {
+      "storm": "Dorian",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "historical",
+      "theta": 1.0981404527044603
+    },
+    {
+      "storm": "Dorian",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "Vmax_10",
+      "theta": 1.0981404527044603
+    },
+    {
+      "storm": "Dorian",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 1.1693149221042145
+    },
+    {
+      "storm": "Dorian",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 1.1205190723563803
+    },
+    {
+      "storm": "Dorian",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 1.1205190723563803
+    },
+    {
+      "storm": "Dorian",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 1.101401094996994
+    },
+    {
+      "storm": "Dorian",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 1.099575638971107
+    },
+    {
+      "storm": "Dorian",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 1.099575638971107
+    },
+    {
+      "storm": "Florence",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "control",
+      "theta": 1.0743154554343313
+    },
+    {
+      "storm": "Florence",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "historical",
+      "theta": 1.0865205308176766
+    },
+    {
+      "storm": "Florence",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "Vmax_10",
+      "theta": 1.086278653439137
+    },
+    {
+      "storm": "Florence",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 1.1239532218064499
+    },
+    {
+      "storm": "Florence",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 1.158779274243329
+    },
+    {
+      "storm": "Florence",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 1.1453857020012255
+    },
+    {
+      "storm": "Florence",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 1.071251799512274
+    },
+    {
+      "storm": "Florence",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 1.0832059728715713
+    },
+    {
+      "storm": "Florence",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 1.0840451883229554
+    },
+    {
+      "storm": "Ian",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "control",
+      "theta": 0.9801358283091184
+    },
+    {
+      "storm": "Ian",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "historical",
+      "theta": 0.9787092401221849
+    },
+    {
+      "storm": "Ian",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "Vmax_10",
+      "theta": 0.9889241713486193
+    },
+    {
+      "storm": "Ian",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 1.0540395514014673
+    },
+    {
+      "storm": "Ian",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 1.045510061397302
+    },
+    {
+      "storm": "Ian",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 1.0447177862051547
+    },
+    {
+      "storm": "Ian",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.9902488149251637
+    },
+    {
+      "storm": "Ian",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 0.9859498849797423
+    },
+    {
+      "storm": "Ian",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 0.9953721581095507
+    },
+    {
+      "storm": "Ida",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "control",
+      "theta": 0.9802013513245893
+    },
+    {
+      "storm": "Ida",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "historical",
+      "theta": 0.9802013513245893
+    },
+    {
+      "storm": "Ida",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "Vmax_10",
+      "theta": 0.9802013513245893
+    },
+    {
+      "storm": "Ida",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 1.0556264352149196
+    },
+    {
+      "storm": "Ida",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 1.0556264352149196
+    },
+    {
+      "storm": "Ida",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 1.0556264352149196
+    },
+    {
+      "storm": "Ida",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.9864405023118858
+    },
+    {
+      "storm": "Ida",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 0.9864405023118858
+    },
+    {
+      "storm": "Ida",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 0.9864405023118858
+    },
+    {
+      "storm": "Irma",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "control",
+      "theta": 0.9720104179664197
+    },
+    {
+      "storm": "Irma",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "historical",
+      "theta": 1.0009811697273499
+    },
+    {
+      "storm": "Irma",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "Vmax_10",
+      "theta": 1.0073332358457634
+    },
+    {
+      "storm": "Irma",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 1.0485203749118805
+    },
+    {
+      "storm": "Irma",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 1.048520629304948
+    },
+    {
+      "storm": "Irma",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 1.051709635371624
+    },
+    {
+      "storm": "Irma",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.9771380978177081
+    },
+    {
+      "storm": "Irma",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 1.002949674557162
+    },
+    {
+      "storm": "Irma",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 1.0104276918371147
+    },
+    {
+      "storm": "Laura",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "control",
+      "theta": 1.043940821160103
+    },
+    {
+      "storm": "Laura",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "historical",
+      "theta": 1.043940821160103
+    },
+    {
+      "storm": "Laura",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "Vmax_10",
+      "theta": 1.043940821160103
+    },
+    {
+      "storm": "Laura",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 1.0610948998106435
+    },
+    {
+      "storm": "Laura",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 1.0600609051432586
+    },
+    {
+      "storm": "Laura",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 1.0600609051432586
+    },
+    {
+      "storm": "Laura",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 1.0478977492807369
+    },
+    {
+      "storm": "Laura",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 1.0481933411899675
+    },
+    {
+      "storm": "Laura",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 1.0481933411899675
+    },
+    {
+      "storm": "Matthew",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "control",
+      "theta": 0.9584629936292293
+    },
+    {
+      "storm": "Matthew",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "historical",
+      "theta": 0.9584629936292293
+    },
+    {
+      "storm": "Matthew",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "Vmax_10",
+      "theta": 0.9584629936292293
+    },
+    {
+      "storm": "Matthew",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 0.8376141423285957
+    },
+    {
+      "storm": "Matthew",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 0.8376141423285957
+    },
+    {
+      "storm": "Matthew",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 0.8376141423285957
+    },
+    {
+      "storm": "Matthew",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.9112284196731877
+    },
+    {
+      "storm": "Matthew",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 0.9112284196731877
+    },
+    {
+      "storm": "Matthew",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 0.9112284196731877
+    },
+    {
+      "storm": "Michael",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "control",
+      "theta": 1.0434919137738983
+    },
+    {
+      "storm": "Michael",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "historical",
+      "theta": 1.044205809316596
+    },
+    {
+      "storm": "Michael",
+      "source": "danso",
+      "sea_level": "reference",
+      "forcing": "Vmax_10",
+      "theta": 1.0444326063689229
+    },
+    {
+      "storm": "Michael",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 1.0600060956800281
+    },
+    {
+      "storm": "Michael",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 1.0606016832699372
+    },
+    {
+      "storm": "Michael",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 1.07211297236233
+    },
+    {
+      "storm": "Michael",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 1.0463622554774132
+    },
+    {
+      "storm": "Michael",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 1.0459694665055213
+    },
+    {
+      "storm": "Michael",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 1.044973702454898
+    },
+    {
+      "storm": "Bonnie",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "control",
+      "theta": 0.9508907267718492
+    },
+    {
+      "storm": "Bonnie",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "historical",
+      "theta": 0.9508851387390076
+    },
+    {
+      "storm": "Bonnie",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "Vmax_10",
+      "theta": 0.9508851387390076
+    },
+    {
+      "storm": "Bonnie",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 0.9173806276755809
+    },
+    {
+      "storm": "Bonnie",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 0.9165799199926122
+    },
+    {
+      "storm": "Bonnie",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 0.9165799199926122
+    },
+    {
+      "storm": "Bonnie",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.9391122533759991
+    },
+    {
+      "storm": "Bonnie",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 0.9391593070338702
+    },
+    {
+      "storm": "Bonnie",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 0.9391593070338702
+    },
+    {
+      "storm": "Charley",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "control",
+      "theta": 0.7174171075445369
+    },
+    {
+      "storm": "Charley",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "historical",
+      "theta": 0.7199443762950014
+    },
+    {
+      "storm": "Charley",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "Vmax_10",
+      "theta": 0.7196731137096609
+    },
+    {
+      "storm": "Charley",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 0.7259509620333829
+    },
+    {
+      "storm": "Charley",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 0.7287791570997453
+    },
+    {
+      "storm": "Charley",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 0.7287887817494418
+    },
+    {
+      "storm": "Charley",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.7348164313669812
+    },
+    {
+      "storm": "Charley",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 0.7385320226710644
+    },
+    {
+      "storm": "Charley",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 0.7374821497445765
+    },
+    {
+      "storm": "Floyd",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "control",
+      "theta": 0.9537303741719093
+    },
+    {
+      "storm": "Floyd",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "historical",
+      "theta": 1.1289756128361133
+    },
+    {
+      "storm": "Floyd",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "Vmax_10",
+      "theta": 1.0742220459024026
+    },
+    {
+      "storm": "Floyd",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 0.860829178117889
+    },
+    {
+      "storm": "Floyd",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 1.1194461246771867
+    },
+    {
+      "storm": "Floyd",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 1.0665644726276218
+    },
+    {
+      "storm": "Floyd",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.9255351936968413
+    },
+    {
+      "storm": "Floyd",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 1.1145712791507598
+    },
+    {
+      "storm": "Floyd",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 1.065992021468196
+    },
+    {
+      "storm": "Fran",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "control",
+      "theta": 0.9362444171053167
+    },
+    {
+      "storm": "Fran",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "historical",
+      "theta": 0.9494103771882312
+    },
+    {
+      "storm": "Fran",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "Vmax_10",
+      "theta": 0.9494103771882312
+    },
+    {
+      "storm": "Fran",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 0.9082088742613875
+    },
+    {
+      "storm": "Fran",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 0.9251501857440523
+    },
+    {
+      "storm": "Fran",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 0.9251501857440523
+    },
+    {
+      "storm": "Fran",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.9407999708041102
+    },
+    {
+      "storm": "Fran",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 0.9426375980857818
+    },
+    {
+      "storm": "Fran",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 0.9426375980857818
+    },
+    {
+      "storm": "Frances",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "control",
+      "theta": 0.9498408082758613
+    },
+    {
+      "storm": "Frances",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "historical",
+      "theta": 0.9506936327569135
+    },
+    {
+      "storm": "Frances",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "Vmax_10",
+      "theta": 0.9446884353575218
+    },
+    {
+      "storm": "Frances",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 0.8968795750064622
+    },
+    {
+      "storm": "Frances",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 0.8698567036285507
+    },
+    {
+      "storm": "Frances",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 0.8698769894273087
+    },
+    {
+      "storm": "Frances",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.9327181856524419
+    },
+    {
+      "storm": "Frances",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 0.9321393893373803
+    },
+    {
+      "storm": "Frances",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 0.9321391009980262
+    },
+    {
+      "storm": "Harvey",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "control",
+      "theta": 1.064678369230592
+    },
+    {
+      "storm": "Harvey",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "historical",
+      "theta": 1.064678369230592
+    },
+    {
+      "storm": "Harvey",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "Vmax_10",
+      "theta": 0.9748003926360066
+    },
+    {
+      "storm": "Harvey",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 1.125250040493872
+    },
+    {
+      "storm": "Harvey",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 1.125250040493872
+    },
+    {
+      "storm": "Harvey",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 1.0459662435066368
+    },
+    {
+      "storm": "Harvey",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 1.0662493958304229
+    },
+    {
+      "storm": "Harvey",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 1.0662493958304229
+    },
+    {
+      "storm": "Harvey",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 0.9766697374672931
+    },
+    {
+      "storm": "Ike",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "control",
+      "theta": 0.719202879332158
+    },
+    {
+      "storm": "Ike",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "historical",
+      "theta": 0.7174071463188773
+    },
+    {
+      "storm": "Ike",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "Vmax_10",
+      "theta": 0.7192159287609025
+    },
+    {
+      "storm": "Ike",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 0.7247493333831561
+    },
+    {
+      "storm": "Ike",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 0.7272877253479269
+    },
+    {
+      "storm": "Ike",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 0.727215620444133
+    },
+    {
+      "storm": "Ike",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.7378619877436638
+    },
+    {
+      "storm": "Ike",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 0.7362187274682144
+    },
+    {
+      "storm": "Ike",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 0.7360599201235911
+    },
+    {
+      "storm": "Isabel",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "control",
+      "theta": 0.6953729368169491
+    },
+    {
+      "storm": "Isabel",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "historical",
+      "theta": 0.9157977789819935
+    },
+    {
+      "storm": "Isabel",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "Vmax_10",
+      "theta": 0.9260675176609826
+    },
+    {
+      "storm": "Isabel",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 0.7027361383844895
+    },
+    {
+      "storm": "Isabel",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 0.7745287829470554
+    },
+    {
+      "storm": "Isabel",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 0.8388148770695538
+    },
+    {
+      "storm": "Isabel",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.7257619257302911
+    },
+    {
+      "storm": "Isabel",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 0.8149662681497835
+    },
+    {
+      "storm": "Isabel",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 0.8859539918197815
+    },
+    {
+      "storm": "Jeanne",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "control",
+      "theta": 0.9445951911691693
+    },
+    {
+      "storm": "Jeanne",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "historical",
+      "theta": 0.9632408791899596
+    },
+    {
+      "storm": "Jeanne",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "Vmax_10",
+      "theta": 0.9670551042464307
+    },
+    {
+      "storm": "Jeanne",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 0.9467386378685954
+    },
+    {
+      "storm": "Jeanne",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 0.9677607113678476
+    },
+    {
+      "storm": "Jeanne",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 0.965966155879008
+    },
+    {
+      "storm": "Jeanne",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.9474615605384192
+    },
+    {
+      "storm": "Jeanne",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 0.9657591635949757
+    },
+    {
+      "storm": "Jeanne",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 0.9631549481146393
+    },
+    {
+      "storm": "Lili",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "control",
+      "theta": 0.9409062152185582
+    },
+    {
+      "storm": "Lili",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "historical",
+      "theta": 0.941146887467645
+    },
+    {
+      "storm": "Lili",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "Vmax_10",
+      "theta": 0.9425181952828591
+    },
+    {
+      "storm": "Lili",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 0.901995869559056
+    },
+    {
+      "storm": "Lili",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 0.9040029702781954
+    },
+    {
+      "storm": "Lili",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 0.9019758001142797
+    },
+    {
+      "storm": "Lili",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.9116715003470218
+    },
+    {
+      "storm": "Lili",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 0.9108310659245751
+    },
+    {
+      "storm": "Lili",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 0.9167967717117979
+    },
+    {
+      "storm": "Opal",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "control",
+      "theta": 0.9503440503947905
+    },
+    {
+      "storm": "Opal",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "historical",
+      "theta": 0.951667982994286
+    },
+    {
+      "storm": "Opal",
+      "source": "danso",
+      "sea_level": "ref",
+      "forcing": "Vmax_10",
+      "theta": 0.9385141987992731
+    },
+    {
+      "storm": "Opal",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "control",
+      "theta": 0.867116982416339
+    },
+    {
+      "storm": "Opal",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "historical",
+      "theta": 0.8777230711638396
+    },
+    {
+      "storm": "Opal",
+      "source": "danso",
+      "sea_level": "slr_0.44m",
+      "forcing": "Vmax_10",
+      "theta": 0.8773811457540693
+    },
+    {
+      "storm": "Opal",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "control",
+      "theta": 0.9196505535517865
+    },
+    {
+      "storm": "Opal",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "historical",
+      "theta": 0.9298257396137861
+    },
+    {
+      "storm": "Opal",
+      "source": "danso",
+      "sea_level": "slr_0.74m",
+      "forcing": "Vmax_10",
+      "theta": 0.9270381868982908
+    },
+    {
+      "storm": "FRANCES",
+      "source": "cera",
+      "sea_level": "historical",
+      "forcing": "historical",
+      "theta": 1.0263759938344856
+    },
+    {
+      "storm": "OMAR",
+      "source": "cera",
+      "sea_level": "historical",
+      "forcing": "historical",
+      "theta": 1.0997730862837714
+    },
+    {
+      "storm": "EARL",
+      "source": "cera",
+      "sea_level": "historical",
+      "forcing": "historical",
+      "theta": 1.0024205702991023
+    },
+    {
+      "storm": "DEBBY",
+      "source": "cera",
+      "sea_level": "historical",
+      "forcing": "historical",
+      "theta": 0.886018815954792
+    },
+    {
+      "storm": "ANDREA",
+      "source": "cera",
+      "sea_level": "historical",
+      "forcing": "historical",
+      "theta": 0.9294808849352817
+    },
+    {
+      "storm": "ARTHUR",
+      "source": "cera",
+      "sea_level": "historical",
+      "forcing": "historical",
+      "theta": 0.8715132901859675
+    },
+    {
+      "storm": "MARIA",
+      "source": "cera",
+      "sea_level": "historical",
+      "forcing": "historical",
+      "theta": 1.0027332323573075
+    },
+    {
+      "storm": "ALBERTO",
+      "source": "cera",
+      "sea_level": "historical",
+      "forcing": "historical",
+      "theta": 0.9899968162208205
+    },
+    {
+      "storm": "MICHAEL",
+      "source": "cera",
+      "sea_level": "historical",
+      "forcing": "historical",
+      "theta": 1.0570439769809206
+    },
+    {
+      "storm": "FIONA",
+      "source": "cera",
+      "sea_level": "historical",
+      "forcing": "historical",
+      "theta": 0.8582283946381362
+    },
+    {
+      "storm": "NICOLE",
+      "source": "cera",
+      "sea_level": "historical",
+      "forcing": "historical",
+      "theta": 1.0119917985724336
+    }
+  ],
+  "validation_storms": {
+    "IRENE": {
+      "n_scenarios": 1,
+      "theta_values": [
+        2.35255149800565
+      ]
+    },
+    "SANDY": {
+      "n_scenarios": 1,
+      "theta_values": [
+        3.1792665862923695
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "regions": {
+    "obx": {
+      "n_valid_nodes": 39494,
+      "n_patches": 1974,
+      "n_training_rows": 361242,
+      "theta_min": 0.4485912024974823,
+      "theta_max": 2.8809406757354736
+    },
+    "nyc": {
+      "n_valid_nodes": 4393,
+      "n_patches": 219,
+      "n_training_rows": 41829,
+      "theta_min": 0.6953729391098022,
+      "theta_max": 1.169314980506897
+    }
+  }
+}

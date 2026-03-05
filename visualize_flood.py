@@ -521,16 +521,181 @@ def figure_sandy_comparison():
     print(f"  Saved: {out}")
 
 
+# ── DDPM prediction visualization ──────────────────────────────────────────────
+
+def plot_ddpm_flood(pred_nodes_path, node_coords_path, node_depths_path,
+                    bbox, output_path, theta=None, vmin=0, vmax=3.5,
+                    zoom=14, grid_res=500, max_spread=500):
+    """Render DDPM node-level predictions as a Miura-style flood map.
+
+    Applies the bathtub model (compare surge to elevation) and renders
+    inundation on land only, matching the style of Miura et al. 2021.
+
+    Args:
+        pred_nodes_path: Path to node-level surge predictions (n_nodes,)
+        node_coords_path: Path to node coordinates (n_nodes, 2) = [lat, lon]
+        node_depths_path: Path to node depths (n_nodes,)
+        bbox: dict with lat_min, lat_max, lon_min, lon_max
+        output_path: Where to save the PNG
+        theta: θ value for labeling
+        vmin, vmax: colorbar range
+        zoom: basemap zoom level
+        grid_res: interpolation grid resolution
+        max_spread: max distance (meters) flood can spread from a data point
+    """
+    surge = np.load(pred_nodes_path)
+    coords = np.load(node_coords_path)  # (n_nodes, 2) = [lat, lon]
+    depths = np.load(node_depths_path)   # (n_nodes,)
+
+    lats = coords[:, 0]
+    lons = coords[:, 1]
+
+    # Filter to region bbox
+    mask = (
+        (lats >= bbox["lat_min"]) & (lats <= bbox["lat_max"]) &
+        (lons >= bbox["lon_min"]) & (lons <= bbox["lon_max"])
+    )
+    lx = lons[mask]
+    ly = lats[mask]
+    ld = depths[mask]
+    local_surge = surge[mask]
+
+    # Filter NaN
+    valid = ~np.isnan(local_surge)
+    lx, ly, ld, local_surge = lx[valid], ly[valid], ld[valid], local_surge[valid]
+
+    # Compute inundation using bathtub model
+    inundation = compute_inundation(ld, local_surge)
+
+    title = f"DDPM Flood Prediction (θ={theta:.2f}m)" if theta else "DDPM Flood Prediction"
+
+    fig, ax = plt.subplots(1, 1, figsize=(10, 14))
+    plot_flood_map(
+        ax, lx, ly, ld, None, inundation, bbox,
+        vmin=vmin, vmax=vmax, zoom=zoom, alpha=0.6,
+        title=title, grid_res=grid_res, max_spread=max_spread,
+    )
+
+    transformer = Transformer.from_crs("EPSG:4326", "EPSG:3857", always_xy=True)
+    add_scale_bar(ax)
+    add_north_arrow(ax)
+
+    fig.tight_layout()
+    fig.savefig(str(output_path), dpi=200, bbox_inches='tight', facecolor='white')
+    plt.close()
+    print(f"  Saved: {output_path}")
+
+
+def plot_ddpm_vs_truth(pred_nodes_path, truth_nodes_path, node_coords_path,
+                       node_depths_path, bbox, output_path, storm_name="",
+                       theta=None, vmin=0, vmax=3.5, zoom=14, grid_res=500):
+    """Side-by-side: DDPM prediction vs ADCIRC truth for a validation storm."""
+    coords = np.load(node_coords_path)
+    depths = np.load(node_depths_path)
+    pred_surge = np.load(pred_nodes_path)
+    truth_surge = np.load(truth_nodes_path)
+
+    lats = coords[:, 0]
+    lons = coords[:, 1]
+
+    # Filter to region bbox
+    mask = (
+        (lats >= bbox["lat_min"]) & (lats <= bbox["lat_max"]) &
+        (lons >= bbox["lon_min"]) & (lons <= bbox["lon_max"])
+    )
+    lx, ly, ld = lons[mask], lats[mask], depths[mask]
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 14))
+    transformer = Transformer.from_crs("EPSG:4326", "EPSG:3857", always_xy=True)
+
+    # Left: DDPM prediction
+    pred_local = pred_surge[mask]
+    valid_pred = ~np.isnan(pred_local)
+    pred_inundation = compute_inundation(ld[valid_pred], pred_local[valid_pred])
+    theta_label = f" (θ={theta:.2f}m)" if theta else ""
+    plot_flood_map(
+        ax1, lx[valid_pred], ly[valid_pred], ld[valid_pred], None,
+        pred_inundation, bbox, vmin=vmin, vmax=vmax, zoom=zoom, alpha=0.6,
+        title=f"DDPM Prediction — {storm_name}{theta_label}",
+        grid_res=grid_res,
+    )
+    add_scale_bar(ax1)
+    add_north_arrow(ax1)
+
+    # Right: ADCIRC truth
+    truth_local = truth_surge[mask]
+    valid_truth = ~np.isnan(truth_local)
+    truth_inundation = compute_inundation(ld[valid_truth], truth_local[valid_truth])
+    plot_flood_map(
+        ax2, lx[valid_truth], ly[valid_truth], ld[valid_truth], None,
+        truth_inundation, bbox, vmin=vmin, vmax=vmax, zoom=zoom, alpha=0.6,
+        title=f"ADCIRC Truth — {storm_name}{theta_label}",
+        grid_res=grid_res,
+    )
+    add_scale_bar(ax2)
+
+    fig.tight_layout()
+    fig.savefig(str(output_path), dpi=180, bbox_inches='tight', facecolor='white')
+    plt.close()
+    print(f"  Saved: {output_path}")
+
+
 # ── Run all ───────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    print("=" * 60)
-    print("Generating Miura-style flood visualizations (v3 — land-masked)")
-    print("=" * 60)
+    import argparse
 
-    figure_lower_manhattan()
-    figure_nyc_wide()
-    figure_theta_sweep()
-    figure_sandy_comparison()
+    parser = argparse.ArgumentParser(description="Flood visualization")
+    parser.add_argument("--source", choices=["adcirc", "ddpm"], default="adcirc",
+                        help="Data source: adcirc (raw ADCIRC files) or ddpm (DDPM predictions)")
+    parser.add_argument("--region", choices=["obx", "nyc"], default="nyc",
+                        help="Region for DDPM visualization")
+    parser.add_argument("--storm", type=str, default=None,
+                        help="Storm name for DDPM comparison (e.g., arthur, sandy)")
+    parser.add_argument("--theta", type=float, default=None,
+                        help="θ value for DDPM single-theta visualization")
+    args = parser.parse_args()
+
+    if args.source == "adcirc":
+        print("=" * 60)
+        print("Generating Miura-style flood visualizations (ADCIRC source)")
+        print("=" * 60)
+        figure_lower_manhattan()
+        figure_nyc_wide()
+        figure_theta_sweep()
+        figure_sandy_comparison()
+    elif args.source == "ddpm":
+        from pathlib import Path
+        print("=" * 60)
+        print(f"Generating Miura-style flood visualizations (DDPM source, {args.region.upper()})")
+        print("=" * 60)
+
+        data_dir = Path(f"data/processed/{args.region}")
+        results_dir = Path(f"results/{args.region}/generated")
+        coords_path = str(data_dir / "node_coords.npy")
+        depths_path = str(data_dir / "node_depths.npy")
+
+        BBOXES = {
+            "obx": {"lat_min": 34.50, "lat_max": 36.00, "lon_min": -76.50, "lon_max": -75.30},
+            "nyc": LM_BBOX,
+        }
+        bbox = BBOXES[args.region]
+
+        if args.storm:
+            pred_path = str(results_dir / f"pred_{args.storm}_nodes.npy")
+            truth_path = str(results_dir / f"truth_{args.storm}_nodes.npy")
+            out_path = str(results_dir / f"viz_{args.storm}_comparison.png")
+            plot_ddpm_vs_truth(
+                pred_path, truth_path, coords_path, depths_path,
+                bbox, out_path, storm_name=args.storm.title(),
+                theta=args.theta,
+            )
+        elif args.theta is not None:
+            pred_path = str(results_dir / f"pred_theta_{args.theta:.3f}_nodes.npy")
+            out_path = str(results_dir / f"viz_theta_{args.theta:.3f}.png")
+            plot_ddpm_flood(
+                pred_path, coords_path, depths_path,
+                bbox, out_path, theta=args.theta,
+            )
 
     print("\n" + "=" * 60)
     print("All visualizations generated!")
