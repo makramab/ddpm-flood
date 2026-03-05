@@ -21,6 +21,8 @@ GIS_FloodSimulation/
 
 # OS
 .DS_Store
+.claude/
+
 
 # ── Data directory: ignore large subdirs, keep validation + viz ──
 # First, don't ignore data/ itself (so git can look inside)
