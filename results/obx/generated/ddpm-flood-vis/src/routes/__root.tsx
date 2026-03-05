@@ -18,6 +18,10 @@ export const Route = createRootRoute({
       { title: 'DDPM Flood Visualization' },
     ],
     links: [
+      { rel: 'icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/logo192.png' },
+      { rel: 'icon', type: 'image/png', sizes: '512x512', href: '/logo512.png' },
+      { rel: 'apple-touch-icon', href: '/logo192.png' },
       { rel: 'stylesheet', href: appCss },
       { rel: 'stylesheet', href: mapboxCss },
     ],
