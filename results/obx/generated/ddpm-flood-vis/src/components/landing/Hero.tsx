@@ -15,12 +15,20 @@ export function Hero() {
         <p className="text-sm text-muted-foreground max-w-xl mx-auto mb-8">
           Explore how a Denoising Diffusion Probabilistic Model performs across three scenarios: in-distribution success, extrapolation failure, and cross-storm generalization failure.
         </p>
-        <Link
-          to="/map"
-          className="inline-block px-8 py-3 bg-primary text-primary-foreground font-semibold rounded-lg transition-colors hover:bg-primary/90"
-        >
-          Explore the Map
-        </Link>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <Link
+            to="/map"
+            className="inline-block px-8 py-3 bg-primary text-primary-foreground font-semibold rounded-lg transition-colors hover:bg-primary/90"
+          >
+            Explore the Map
+          </Link>
+          <Link
+            to="/about"
+            className="inline-block px-8 py-3 border border-border text-foreground font-semibold rounded-lg transition-colors hover:bg-muted"
+          >
+            About This Project
+          </Link>
+        </div>
       </div>
     </section>
   )
