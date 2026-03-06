@@ -16,10 +16,14 @@ export const Route = createFileRoute('/metrics')({
   component: MetricsPage,
 })
 
-function ChartCard({ title, children }: { title: string; children: React.ReactNode }) {
+function ChartCard({ title, description, children }: { title: string; description?: string; children: React.ReactNode }) {
   return (
     <div className="bg-card border border-border rounded-xl p-4">
-      <h2 className="text-sm font-semibold text-muted-foreground mb-3">{title}</h2>
+      <h2 className="text-sm font-semibold text-muted-foreground mb-1">{title}</h2>
+      {description && (
+        <p className="text-xs text-muted-foreground/70 mb-3 leading-relaxed">{description}</p>
+      )}
+      {!description && <div className="mb-2" />}
       {children}
     </div>
   )
@@ -52,20 +56,29 @@ function MetricsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {scenario && (
-            <ChartCard title={`Prediction vs Ground Truth — ${scenario.name} (${scenario.label})`}>
+            <ChartCard
+              title={`Prediction vs Ground Truth — ${scenario.name} (${scenario.label})`}
+              description="Each dot is one ADCIRC mesh node. The dashed line is y = x (perfect prediction). Points near the line mean the model predicted surge accurately at that node. R² measures overall fit: 1.0 = perfect, 0 = no better than predicting the mean everywhere, negative = worse than the mean."
+            >
               <ScatterPlot nodeData={scenario.node_data} r2={scenario.metrics.r2} />
             </ChartCard>
           )}
 
           {thetaDistribution && scenarios.length > 0 && (
-            <ChartCard title="Training &#x3B8; Distribution">
+            <ChartCard
+              title="Training &#x3B8; Distribution"
+              description="Histogram of peak surge values (θ) the model saw during training. Colored lines mark validation scenarios. Scenarios near the histogram peak are in-distribution — the model has seen many similar examples. Those in the sparse right tail are extrapolation territory, where the model has little training signal and performance degrades."
+            >
               <ThetaHistogram distribution={thetaDistribution} scenarios={scenarios} />
             </ChartCard>
           )}
         </div>
 
         {allMetrics.length > 0 && (
-          <ChartCard title="Cross-Scenario Metrics Comparison (10 validation scenarios)">
+          <ChartCard
+            title="Cross-Scenario Metrics Comparison (10 validation scenarios)"
+            description="Performance across all 10 held-out validation scenarios. Green bars (R² near 1) indicate accurate spatial surge predictions; red bars (R² < 0) mean the model performs worse than simply predicting the mean surge everywhere. Use the metric toggles to compare R², RMSE (average error in meters), Bias (systematic over/under-prediction), and MAE (average absolute error)."
+          >
             <MetricsBarChart metrics={allMetrics} featuredThetas={featuredThetas} />
           </ChartCard>
         )}
