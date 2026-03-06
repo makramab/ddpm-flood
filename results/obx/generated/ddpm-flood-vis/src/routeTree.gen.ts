@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as MetricsRouteImport } from './routes/metrics'
 import { Route as MapRouteImport } from './routes/map'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as R0xPrimerRouteImport } from './routes/0x-primer'
 import { Route as IndexRouteImport } from './routes/index'
 
 const MetricsRoute = MetricsRouteImport.update({
@@ -29,6 +30,11 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const R0xPrimerRoute = R0xPrimerRouteImport.update({
+  id: '/0x-primer',
+  path: '/0x-primer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,12 +43,14 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/0x-primer': typeof R0xPrimerRoute
   '/about': typeof AboutRoute
   '/map': typeof MapRoute
   '/metrics': typeof MetricsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/0x-primer': typeof R0xPrimerRoute
   '/about': typeof AboutRoute
   '/map': typeof MapRoute
   '/metrics': typeof MetricsRoute
@@ -50,20 +58,22 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/0x-primer': typeof R0xPrimerRoute
   '/about': typeof AboutRoute
   '/map': typeof MapRoute
   '/metrics': typeof MetricsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/map' | '/metrics'
+  fullPaths: '/' | '/0x-primer' | '/about' | '/map' | '/metrics'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/map' | '/metrics'
-  id: '__root__' | '/' | '/about' | '/map' | '/metrics'
+  to: '/' | '/0x-primer' | '/about' | '/map' | '/metrics'
+  id: '__root__' | '/' | '/0x-primer' | '/about' | '/map' | '/metrics'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  R0xPrimerRoute: typeof R0xPrimerRoute
   AboutRoute: typeof AboutRoute
   MapRoute: typeof MapRoute
   MetricsRoute: typeof MetricsRoute
@@ -92,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/0x-primer': {
+      id: '/0x-primer'
+      path: '/0x-primer'
+      fullPath: '/0x-primer'
+      preLoaderRoute: typeof R0xPrimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -104,6 +121,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  R0xPrimerRoute: R0xPrimerRoute,
   AboutRoute: AboutRoute,
   MapRoute: MapRoute,
   MetricsRoute: MetricsRoute,
