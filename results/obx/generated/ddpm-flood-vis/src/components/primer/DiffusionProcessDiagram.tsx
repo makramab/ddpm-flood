@@ -43,8 +43,8 @@ export function DiffusionProcessDiagram({ state }: Props) {
             <marker id="arrow-right" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
               <path d="M0,0 L8,3 L0,6" fill="var(--muted-foreground)" />
             </marker>
-            <marker id="arrow-left" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
-              <path d="M8,0 L0,3 L8,6" fill="var(--primary)" />
+            <marker id="arrow-left" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <path d="M0,0 L8,3 L0,6" fill="var(--primary)" />
             </marker>
           </defs>
 
