@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PresentationRouteImport } from './routes/presentation'
 import { Route as MetricsRouteImport } from './routes/metrics'
 import { Route as MapRouteImport } from './routes/map'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as R0xPrimerRouteImport } from './routes/0x-primer'
 import { Route as IndexRouteImport } from './routes/index'
 
+const PresentationRoute = PresentationRouteImport.update({
+  id: '/presentation',
+  path: '/presentation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MetricsRoute = MetricsRouteImport.update({
   id: '/metrics',
   path: '/metrics',
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/map': typeof MapRoute
   '/metrics': typeof MetricsRoute
+  '/presentation': typeof PresentationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/map': typeof MapRoute
   '/metrics': typeof MetricsRoute
+  '/presentation': typeof PresentationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,13 +70,27 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/map': typeof MapRoute
   '/metrics': typeof MetricsRoute
+  '/presentation': typeof PresentationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/0x-primer' | '/about' | '/map' | '/metrics'
+  fullPaths:
+    | '/'
+    | '/0x-primer'
+    | '/about'
+    | '/map'
+    | '/metrics'
+    | '/presentation'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/0x-primer' | '/about' | '/map' | '/metrics'
-  id: '__root__' | '/' | '/0x-primer' | '/about' | '/map' | '/metrics'
+  to: '/' | '/0x-primer' | '/about' | '/map' | '/metrics' | '/presentation'
+  id:
+    | '__root__'
+    | '/'
+    | '/0x-primer'
+    | '/about'
+    | '/map'
+    | '/metrics'
+    | '/presentation'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,10 +99,18 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   MapRoute: typeof MapRoute
   MetricsRoute: typeof MetricsRoute
+  PresentationRoute: typeof PresentationRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/presentation': {
+      id: '/presentation'
+      path: '/presentation'
+      fullPath: '/presentation'
+      preLoaderRoute: typeof PresentationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/metrics': {
       id: '/metrics'
       path: '/metrics'
@@ -125,6 +155,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   MapRoute: MapRoute,
   MetricsRoute: MetricsRoute,
+  PresentationRoute: PresentationRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

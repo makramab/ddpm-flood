@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { Home, Map, BarChart3, Info, Waves, PanelLeftClose, PanelLeft, Sun, Moon } from 'lucide-react'
+import { Home, Map, BarChart3, Info, Waves, PanelLeftClose, PanelLeft, Sun, Moon, Presentation } from 'lucide-react'
 import { cn } from '#/lib/utils'
 import { useSidebar } from '#/hooks/useSidebar'
 import { useTheme } from '#/hooks/useTheme'
@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { to: '/' as const, label: 'Home', icon: Home },
   { to: '/map' as const, label: 'Map', icon: Map },
   { to: '/metrics' as const, label: 'Metrics', icon: BarChart3 },
+  { to: '/presentation' as const, label: 'Deck', icon: Presentation },
   { to: '/about' as const, label: 'About', icon: Info },
 ]
 
