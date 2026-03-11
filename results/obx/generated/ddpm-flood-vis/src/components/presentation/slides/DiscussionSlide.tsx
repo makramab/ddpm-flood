@@ -18,7 +18,7 @@ export function DiscussionSlide() {
           {
             num: 2,
             title: 'Synthetic-to-real generalization gap',
-            text: 'Training is 100% Danso parametric storms. At \u03B8 \u2248 2.0m: Danso produces 63% of nodes > 1m surge (broad pattern), Arthur produces only 18% (focused pattern). The model only knows the Danso pattern.',
+            text: 'Training is 93% parametric storms (Danso). At \u03B8 \u2248 2.0m: parametric storms produce 63% of nodes > 1m surge (broad pattern), Arthur (real forcing) produces only 18% (focused pattern). The model overwhelmingly learns the parametric pattern.',
           },
           {
             num: 3,
@@ -28,7 +28,7 @@ export function DiscussionSlide() {
           {
             num: 4,
             title: 'Confident extrapolation failures',
-            text: 'Spatial conditioning made the model more confident everywhere. V1 failed gracefully (R\u00B2 \u2248 -0.08). V2 fails confidently (R\u00B2 \u2248 -1.5) \u2014 actively worse than predicting nothing.',
+            text: 'Adding spatial conditioning (lat, lon, depth) made the model more confident everywhere. Without it, the model failed gracefully (R\u00B2 \u2248 -0.08). With it, the model fails confidently (R\u00B2 \u2248 -1.5) \u2014 actively worse than predicting nothing.',
           },
         ].map((item) => (
           <div key={item.num} className="flex gap-5 bg-muted/30 rounded-lg p-5">

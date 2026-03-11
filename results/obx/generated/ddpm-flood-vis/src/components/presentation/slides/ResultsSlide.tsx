@@ -3,6 +3,7 @@ import { Link } from '@tanstack/react-router'
 import { cn } from '#/lib/utils'
 import { useVisualization } from '#/hooks/visualization/useVisualization'
 import { LayerToggle } from '#/components/visualization/LayerToggle'
+import { ColorLegend } from '#/components/visualization/ColorLegend'
 import { MAP_STYLES } from '#/lib/constants'
 
 const SurgeMap = lazy(() =>
@@ -18,7 +19,7 @@ const SCENARIOS = [
     rmse: '0.060m',
     verdict: 'Success',
     variant: 'success' as const,
-    detail: 'In-distribution: same storm family, \u03B8 well within training range',
+    detail: 'In-distribution: parametric storm (93% of training data), \u03B8 well within training range',
   },
   {
     id: 'dorian_high',
@@ -28,7 +29,7 @@ const SCENARIOS = [
     rmse: '0.956m',
     verdict: 'Failure',
     variant: 'warning' as const,
-    detail: 'Extrapolation: \u03B8 above training max (2.88m), same storm family',
+    detail: 'Extrapolation: \u03B8 above training max (2.88m), parametric storm',
   },
   {
     id: 'arthur',
@@ -38,7 +39,7 @@ const SCENARIOS = [
     rmse: '0.600m',
     verdict: 'Failure',
     variant: 'danger' as const,
-    detail: 'Cross-storm: \u03B8 within range but real storm vs. synthetic training data',
+    detail: 'Cross-storm: \u03B8 within range, real meteorological forcing',
   },
 ]
 
@@ -101,6 +102,9 @@ export function ResultsSlide() {
                 />
               </Suspense>
             )}
+            <div className="absolute bottom-3 left-3 z-10">
+              <ColorLegend layer={viz.activeLayer} />
+            </div>
           </div>
         </div>
 

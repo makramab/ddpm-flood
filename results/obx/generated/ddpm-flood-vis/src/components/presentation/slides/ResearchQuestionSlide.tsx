@@ -33,7 +33,7 @@ export function ResearchQuestionSlide() {
         </div>
         <div className="bg-muted/30 rounded-lg p-5 space-y-2">
           <p className="text-sm text-muted-foreground">This adaptation</p>
-          <p className="text-lg text-foreground font-medium">Temperature &rarr; &theta;, coordinates &rarr; surge</p>
+          <p className="text-lg text-foreground font-medium">Temperature &rarr; &theta; + location, coordinates &rarr; surge pattern</p>
           <p className="text-base text-muted-foreground">
             Inpainting mechanism: conditioning columns never noised
           </p>
