@@ -96,6 +96,8 @@ Mar 1   RESULTS_V2.md          V2 results, limitation analysis, diagnostic
 Mar 5   HANDOVER_V3.md         Comprehensive handover with V3 options
    │    ↓ Viz app + primer + presentation built
 Mar 7   HANDOVER_LATEST.md     THIS FILE — final handover for presenter
+   │    ↓ Literature review of 10 papers, explored alternatives
+Mar 23  HANDOVER_LIT_REVIEW.md Literature review, landscape comparison, time-series confirmed
 ```
 
 ### Per-document details
@@ -110,6 +112,7 @@ Mar 7   HANDOVER_LATEST.md     THIS FILE — final handover for presenter
 | 6 | `CURRENT_PLAN_V2.md` | Feb 28 | Diagnoses V1's spatial flatness. Designs the V2 fix (add lat/lon/depth conditioning). Contains V1 baseline results, correlation analysis, and theoretical justification. | Yes — essential for understanding the V1→V2 evolution. |
 | 7 | `RESULTS_V2.md` | Mar 1 | V2 validation results. Documents the three failure modes (extrapolation, cross-storm, skewed θ). Contains the Arthur diagnostic (spatial correlation = 0.31). Lists future options. | Yes — the authoritative results reference. |
 | 8 | `HANDOVER_V3.md` | Mar 5 | Comprehensive handover. Full data inventory, V3 options analysis (A through G), recommended direction (time-series conditioning). | Yes — the most complete single overview before this document. |
+| 9 | `HANDOVER_LIT_REVIEW.md` | Mar 23 | Literature review of 10 papers. Landscape comparison showing DDPM+surge is novel. Explored 4 alternatives (enriched conditioning, multi-gauge, more data, time-series). Confirmed time-series as best path with detailed justification. | Yes — authoritative literature positioning. |
 
 ### Key cross-references between documents
 
